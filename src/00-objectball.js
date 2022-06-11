@@ -114,4 +114,41 @@ let gameObject={
 
     }
 }
-console.log(gameObject)
+debugger
+
+
+function numPointsScored(playerInput) {
+    const game = gameObject
+    for (const gameKey in game){//iterate through game keys home, away
+        const teamObj=game[gameKey]
+        debugger;
+        for(const teamKey in teamObj);
+            const playerObj=teamObj.players
+            debugger
+        for (const playerKey in playerObj){
+            if(playerKey===playerInput){
+                return playerObj[playerKey].points
+            }
+        }
+    }
+}
+  
+
+console.log(numPointsScored('Brendan Haywood'))
+
+function shoeSize(playerInput) {
+    const game = gameObject
+    for (const gameKey in game){//iterate through game keys home, away
+        const teamObj=game[gameKey]
+        for(const teamKey in teamObj){
+            const playerObj=teamObj.players
+        for (const playerKey in playerObj){
+            if(playerKey===playerInput){
+                return playerObj[playerKey].shoe
+            }
+        }
+    }
+}
+    
+}
+console.log(shoeSize('Brendan Haywood'))
