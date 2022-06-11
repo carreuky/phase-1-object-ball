@@ -114,4 +114,4 @@ let gameObject={
 
     }
 }
-console.log(gameObject())
+console.log(gameObject)
