@@ -227,3 +227,83 @@ function bigshoeRebounds() {
 
 console.log(bigshoeRebounds())
 
+function mostPointsScored() {
+ let playerWithHighestPoints={}
+ let highestPoints =0
+ for (const key in gameObject) {
+    for (const player in gameObject[key].players) {
+      if (gameObject[key].players[player].points > highestPoints) {
+        highestPoints = gameObject[key].players[player].points;
+        playerWithHighestPoints = {};
+        playerWithHighestPoints[player] = gameObject[key].players[player];
+      }
+    }
+  }
+
+  return playerWithHighestPoints;
+};
+
+console.log(mostPointsScored())
+
+
+function winningTeam() {
+    let homeTeamPoints = 0;
+    let awayTeamPoints = 0;
+    for (const key in gameObject) {
+      if (key === "away") {
+        for (const player in gameObject[key].players) {
+            awayTeamPoints += gameObject[key].players[player].points;
+
+        }
+      } else if (key === "home") {
+        for (const player in gameObject[key].players) {
+            homeTeamPoints += gameObject[key].players[player].points;
+
+        }
+      }
+    }
+  
+    return `
+    Winning Team - ${
+      homeTeamPoints > awayTeamPoints
+        ? gameObject["home"].teamName
+        : gameObject["away"].teamName
+    }
+    Points - ${homeTeamPoints > awayTeamPoints ? homeTeamPoints : awayTeamPoints}
+    `;
+  };
+console.log(winningTeam())
+
+function playerWithLongestName(){
+    let playerName = "";
+    let sizeOfLongestName = 0;
+    for (const key in gameObject) {
+      for (const player in gameObject[key].players) {
+        if (player.length > sizeOfLongestName) {
+          sizeOfLongestName = player.length;
+          playerName = player;
+        }
+      }
+    }
+  
+    return playerName;
+  };
+
+console.log(playerWithLongestName())
+
+function doesLongNameStealATon  (){
+    const nameOfPlayerWithLongestName = playerWithLongestName();
+    let mostSteals = 0;
+    let playerWithMostSteals = "";
+    for (const key in gameObject) {
+      for (const player in gameObject[key].players) {
+        if (gameObject[key].players[player].steals > mostSteals) {
+          mostSteals = gameObject[key].players[player].steals;
+          playerWithMostSteals = player;
+        }
+      }
+    }
+    return playerWithMostSteals === nameOfPlayerWithLongestName;
+  };
+  
+  console.log(doesLongNameStealATon());
