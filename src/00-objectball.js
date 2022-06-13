@@ -116,6 +116,7 @@ let gameObject = {
 }
 debugger
 
+// - Build a function, `numPointsScored` that takes in an argument of a player's
 
 function numPointsScored(playerInput) {
     const game = gameObject
@@ -136,6 +137,7 @@ function numPointsScored(playerInput) {
 
 console.log(numPointsScored('Brendan Haywood'))
 
+// Build a function, `shoeSize`, that takes in an argument of a player's name and return size
 function shoeSize(playerInput) {
     const game = gameObject
     for (const gameKey in game) {//iterate through game keys home, away
@@ -209,6 +211,7 @@ function playerStats(playerName) {
 }
 console.log(playerStats('Ben Gordon'))
 
+// - Then, return that player's number of rebounds
 
 function bigshoeRebounds() {
     const game = gameObject
@@ -226,6 +229,9 @@ function bigshoeRebounds() {
 }
 
 console.log(bigshoeRebounds())
+
+
+//  Which player has the most points? Call the function `mostPointsScored`.
 
 function mostPointsScored() {
  let playerWithHighestPoints={}
@@ -245,6 +251,7 @@ function mostPointsScored() {
 
 console.log(mostPointsScored())
 
+// Which team has the most points? Call the function `winningTeam`.
 
 function winningTeam() {
     let homeTeamPoints = 0;
@@ -274,6 +281,9 @@ function winningTeam() {
   };
 console.log(winningTeam())
 
+
+// Which player has the longest name? Call the function `playerWithLongestName`.
+
 function playerWithLongestName(){
     let playerName = "";
     let sizeOfLongestName = 0;
@@ -290,7 +300,7 @@ function playerWithLongestName(){
   };
 
 console.log(playerWithLongestName())
-
+// Write a function that returns true if the player with the longest name had the most steals
 function doesLongNameStealATon  (){
     const nameOfPlayerWithLongestName = playerWithLongestName();
     let mostSteals = 0;
